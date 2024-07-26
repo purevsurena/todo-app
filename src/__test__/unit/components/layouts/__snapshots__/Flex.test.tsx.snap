@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flex Component matches the snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "display": "flex",
+      },
+      {
+        "alignItems": "center",
+        "alignSelf": undefined,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "center",
+      },
+      {
+        "backgroundColor": "blue",
+      },
+    ]
+  }
+  testID="flexComponent"
+>
+  <Text>
+    Snapshot Test
+  </Text>
+</View>
+`;
