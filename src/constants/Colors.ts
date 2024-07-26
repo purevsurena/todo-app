@@ -21,6 +21,15 @@ export const Colors = {
     tint: tintColorDark,
     icon: "#9BA1A6",
     tabIconDefault: "#9BA1A6",
-    tabIconSelected: tintColorDark,
+    tabIconSelected: tintColorDark,    
   },
+  generic: {
+    background: '#2c2c2e',
+    cardBG: '#1c1c1e',
+    greyText: '#9E9EA5',
+    blue: '#54a0ff',
+    orange: '#ff5722',
+    turquoise: '#00adb5',
+    yellow: '#FFFF00',
+  }
 };
