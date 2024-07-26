@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
+    "@freakycoder/react-native-bounceable": "^1.0.3",
     "@react-navigation/native": "^6.0.2",
     "eslint": "8",
     "expo": "~51.0.22",
