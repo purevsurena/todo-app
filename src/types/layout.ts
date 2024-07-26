@@ -28,3 +28,18 @@ export type WhiteSpaceProps = {
   size: WhiteSpaceSizeProps;
   style?: ViewStyle;
 };
+
+// Click props
+export type ClickProps = {
+  onPress: () => void;
+  onLongPress?: () => unknown;
+  disabled?: boolean;
+  children: React.ReactNode;
+  hitSlop?: number;
+  style?: ViewStyle;
+};
+
+export const ClickDefaultProps = {
+  disabled: false,
+  hitSlop: 10,
+};
