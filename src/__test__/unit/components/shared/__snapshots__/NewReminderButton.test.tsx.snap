@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewReminderButton Component matches the snapshot 1`] = `
+[
+  <View>
+    <Text />
+  </View>,
+  <Text
+    style={
+      [
+        {
+          "color": "#11181C",
+        },
+        {
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        {
+          "fontSize": 16,
+          "fontWeight": "500",
+          "marginLeft": 4,
+        },
+      ]
+    }
+  >
+    New Reminder
+  </Text>,
+]
+`;
