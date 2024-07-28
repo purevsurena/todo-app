@@ -1,69 +1,112 @@
-import { Image, StyleSheet, Platform } from "react-native";
-
-import ParallaxScrollView from "@/components/layouts/ParallaxScrollView";
-import { ThemedText } from "@/components/shared/ThemedText";
+import React from "react";
+import { ScrollView, StyleSheet } from "react-native";
 import { ThemedView } from "@/components/shared/ThemedView";
+import Card from "@/components/shared/Card";
+import Flex from "@/components/layouts/Flex";
+import { ThemedText } from "@/components/shared/ThemedText";
+import { HelloWave } from "@/components/shared/HelloWave";
+import QuckNotesCard from "@/components/shared/QuckNotesCard";
+import { Colors } from "@/constants/Colors";
+import WhiteSpace from "@/components/layouts/WhiteSpace";
+import { useNavigation } from "expo-router";
+import { NavigationProp } from "@react-navigation/native";
+import { RootStackParamList } from "@/types/navigation";
+import NewReminderButton from "@/components/shared/NewReminderButton";
 
 export default function HomeScreen() {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
-      headerImage={
-        <Image
-          source={require("@/assets/images/partial-react-logo.png")}
-          style={styles.reactLogo}
+    <ThemedView style={styles.stepContainer}>
+      <ScrollView>
+        <WhiteSpace size="24" />
+
+        <Flex flexDirection="row">
+          <ThemedText type="subtitle">Hello,</ThemedText>
+          <HelloWave />
+        </Flex>
+
+        <ThemedText style={styles.greetingDescription} type="default">
+          Adventure is waiting...
+        </ThemedText>
+        <WhiteSpace size="24" />
+
+        <Flex flexDirection="row" justifyContent="space-between">
+          <Card
+            iconName="weather-sunny"
+            iconColor={Colors.generic.yellow}
+            title="3"
+            subtitle="Today"
+            onPress={() =>
+              navigation.navigate("todo-list-detail", { type: "today" })
+            }
+          />
+          <Card
+            iconName="calendar-arrow-right"
+            iconColor="red"
+            title="0"
+            subtitle="Tomorrow"
+            onPress={() =>
+              navigation.navigate("todo-list-detail", { type: "tomorrow" })
+            }
+          />
+        </Flex>
+
+        <WhiteSpace size="24" />
+        <ThemedText type="subtitle">My List</ThemedText>
+        <WhiteSpace size="24" />
+
+        <Flex flexDirection="row" justifyContent="space-between">
+          <Card
+            iconName="format-list-bulleted"
+            iconColor={Colors.generic.blue}
+            title="3"
+            subtitle="ToDo"
+            onPress={() =>
+              navigation.navigate("todo-list-detail", { type: "todo" })
+            }
+          />
+          <Card
+            iconName="calendar"
+            iconColor={Colors.generic.orange}
+            title="0"
+            subtitle="Scheduled"
+            onPress={() =>
+              navigation.navigate("todo-list-detail", { type: "scheduled" })
+            }
+          />
+        </Flex>
+
+        <WhiteSpace size="24" />
+        <ThemedText type="subtitle">Quck notes</ThemedText>
+        <WhiteSpace size="24" />
+
+        <QuckNotesCard
+          iconName="note-edit"
+          iconColor={Colors.generic.turquoise}
+          title="12"
+          subtitle="Quick notes write here..."
+          tasks={[]}
+          onPress={() =>
+            navigation.navigate("todo-list-detail", { type: "quick-notes" })
+          }
         />
-      }
-    >
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit{" "}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{" "}
-          to see changes. Press{" "}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: "cmd + d", android: "cmd + m" })}
-          </ThemedText>{" "}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{" "}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText>{" "}
-          to get a fresh <ThemedText type="defaultSemiBold">app</ThemedText>{" "}
-          directory. This will move the current{" "}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{" "}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      </ScrollView>
+
+    <NewReminderButton onPress={() => {}} color={Colors.generic.turquoise} />
+    </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
   stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+    flex: 1,
+    padding: 16,
+    paddingTop: 64,
+    backgroundColor: Colors.generic.dark,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
+  greetingDescription: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: Colors.generic.greyText,
   },
 });
