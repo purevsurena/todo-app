@@ -24,6 +24,7 @@ export const Colors = {
     tabIconSelected: tintColorDark,    
   },
   generic: {
+    dark: "#000",
     background: '#2c2c2e',
     cardBG: '#1c1c1e',
     greyText: '#9E9EA5',
