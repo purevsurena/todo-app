@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuickNotesCard Component matches the snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+      },
+      {
+        "backgroundColor": "#1c1c1e",
+        "borderRadius": 16,
+        "padding": 12,
+        "paddingTop": 24,
+        "paddingVertical": 16,
+        "width": 718,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingBottom": 12,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      selectable={false}
+      style={
+        [
+          {
+            "color": "#54a0ff",
+            "fontSize": 30,
+          },
+          undefined,
+          {
+            "fontFamily": "material-community",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          {},
+        ]
+      }
+      testID="icon"
+    >
+      󰎚
+    </Text>
+    <Text
+      style={
+        [
+          {
+            "color": "#11181C",
+          },
+          undefined,
+          {
+            "fontSize": 32,
+            "fontWeight": "bold",
+            "lineHeight": 32,
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ]
+      }
+      testID="cardTitle"
+    >
+      Quick Notes
+    </Text>
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#11181C",
+        },
+        undefined,
+        undefined,
+        undefined,
+        {
+          "fontSize": 20,
+          "fontWeight": "bold",
+        },
+        undefined,
+        undefined,
+      ]
+    }
+    testID="cardSubtitle"
+  >
+    Today
+  </Text>
+  <View
+    style={
+      [
+        {
+          "height": 4,
+        },
+        undefined,
+      ]
+    }
+    testID="white-space"
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "backgroundColor": "#2c2c2e",
+          "borderRadius": 12,
+          "marginTop": 4,
+          "padding": 8,
+          "paddingHorizontal": 12,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "#54a0ff",
+            "borderRadius": 3,
+            "height": 6,
+            "marginRight": 6,
+            "width": 6,
+          }
+        }
+      />
+      <Text
+        numberOfLines={1}
+        style={
+          [
+            {
+              "color": "#11181C",
+            },
+            {
+              "fontSize": 16,
+              "lineHeight": 24,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            {
+              "color": "#9E9EA5",
+              "flex": 1,
+              "fontSize": 13,
+              "fontWeight": "500",
+            },
+          ]
+        }
+        testID="task-0"
+      >
+        Task 1
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "#54a0ff",
+            "borderRadius": 3,
+            "height": 6,
+            "marginRight": 6,
+            "width": 6,
+          }
+        }
+      />
+      <Text
+        numberOfLines={1}
+        style={
+          [
+            {
+              "color": "#11181C",
+            },
+            {
+              "fontSize": 16,
+              "lineHeight": 24,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            {
+              "color": "#9E9EA5",
+              "flex": 1,
+              "fontSize": 13,
+              "fontWeight": "500",
+            },
+          ]
+        }
+        testID="task-1"
+      >
+        Task 2
+      </Text>
+    </View>
+  </View>
+</View>
+`;
