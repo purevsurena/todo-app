@@ -13,7 +13,7 @@ type MaterialCommunityIconName = keyof typeof MaterialCommunityIcons.glyphMap;
 interface QuickNotesCardProps {
   iconName: MaterialCommunityIconName;
   iconColor: string;
-  title: string;
+  title: string | number;
   subtitle: string;
   tasks: Task[];
   onPress: () => void;
@@ -47,7 +47,7 @@ const QuickNotesCard: React.FC<QuickNotesCardProps> = ({
         <WhiteSpace size="4" />
         {tasks.length > 0 && (
           <ThemedView style={styles.tasksContainer}>
-            {tasks.map((task, index) => (
+            {tasks.slice(0, 2).map((task, index) => (
               <View key={task._id} style={styles.taskItem}>
                 <View style={styles.taskBullet} />
                 <ThemedText

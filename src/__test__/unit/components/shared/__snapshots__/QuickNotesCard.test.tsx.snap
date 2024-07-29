@@ -53,7 +53,7 @@ exports[`QuickNotesCard Component matches the snapshot 1`] = `
       style={
         [
           {
-            "color": "#11181C",
+            "color": "#fff",
           },
           undefined,
           {
@@ -76,7 +76,7 @@ exports[`QuickNotesCard Component matches the snapshot 1`] = `
     style={
       [
         {
-          "color": "#11181C",
+          "color": "#54a0ff",
         },
         undefined,
         undefined,
@@ -144,7 +144,7 @@ exports[`QuickNotesCard Component matches the snapshot 1`] = `
         style={
           [
             {
-              "color": "#11181C",
+              "color": "#fff",
             },
             {
               "fontSize": 16,
@@ -191,7 +191,7 @@ exports[`QuickNotesCard Component matches the snapshot 1`] = `
         style={
           [
             {
-              "color": "#11181C",
+              "color": "#fff",
             },
             {
               "fontSize": 16,
