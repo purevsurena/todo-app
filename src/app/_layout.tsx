@@ -6,11 +6,14 @@ import { useEffect, useState } from "react";
 import "react-native-reanimated";
 import { TodoProvider } from "@/context/TodoContext";
 import { ensureToken } from "@/api/authClient";
-import { StatusBar } from "react-native";
+import { LogBox, StatusBar } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
+
+// Disable all LogBox warnings
+LogBox.ignoreAllLogs();
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
