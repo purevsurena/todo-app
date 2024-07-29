@@ -1,10 +1,10 @@
-export interface ApiResponse<T> {
-  data: T;
-  error?: string;
+export interface ApiError {
+  message: string;
+  statusCode?: number;
+  details?: any;
 }
 
-export type PhotoMetadata = {
-  title: string;
-  tags: string[];
-  date: string;
-};
+export interface ApiResponse<T> {
+  data?: T;
+  error?: ApiError;
+}
