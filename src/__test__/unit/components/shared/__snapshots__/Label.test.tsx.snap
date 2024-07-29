@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label Component matches the snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+      },
+      [
+        {
+          "backgroundColor": "#3C3C3C",
+          "borderRadius": 12,
+          "borderWidth": 2,
+          "marginBottom": 8,
+          "marginLeft": 8,
+          "paddingHorizontal": 12,
+          "paddingVertical": 4,
+        },
+        {
+          "borderColor": "#3C3C3C",
+        },
+      ],
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#fff",
+        },
+        {
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    Test Label
+  </Text>
+</View>
+`;
