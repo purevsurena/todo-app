@@ -1,50 +1,69 @@
-# Welcome to your Expo app 👋
+# Todo App - Coding Interview Exam
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to the Todo App! This application is built using Expo and is designed to help you manage your tasks efficiently. I am excited to have you explore and test this app as part of your coding interview.
 
-## Get started
+## Warm Greetings
 
-1. Install dependencies
+Hello! Thank you for taking the time to review and test this Todo App. I hope you find it intuitive and easy to use. If you have any questions or need further assistance, please do not hesitate to reach out.
 
-   ```bash
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- You have installed [Node.js](https://nodejs.org/) (which includes npm).
+- You have installed the [Expo CLI](https://docs.expo.dev/get-started/installation/).
+- You have set up and running the [Todo API](https://github.com/purevsurena/todo-api).
+
+## Setup
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/purevsurena/todo-app
+   cd todo-app
+   ```
+
+2. Install the dependencies:
+
+   ```sh
    npm install
    ```
 
-2. Start the app
+3. Replace `localhost` with your real IP address in the `.env` file located inside the `.env` folder.
 
-   ```bash
-    npx expo start
+4. Start the Expo development server:
+   ```sh
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Running the App
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### On Web
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+To run the app in your web browser:
 
-## Get a fresh project
+1. Open your web browser.
+2. Navigate to [http://localhost:8081](http://localhost:8081).
 
-When you're ready, run:
+### On iOS or Android
 
-```bash
-npm run reset-project
-```
+To run the app on your mobile device:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+1. Download the Expo Go app from the [App Store](https://apps.apple.com/app/expo-go/id982107779) or [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent).
+2. Open the Expo Go app on your device.
+3. Scan the QR code displayed in your terminal or browser after running `npx expo start`.
 
-## Learn more
+## Demo Review Videos
 
-To learn more about developing your project with Expo, look at the following resources:
+- **Mobile Demo**: [Watch on YouTube](https://youtu.be/PnQKMVhacdI)
+- **Web Demo**: [Watch on YouTube](https://youtu.be/CU2KyazIUr8)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Additional Information
 
-## Join the community
+This app is optimized for mobile devices but can also be accessed via web for a seamless experience.
 
-Join our community of developers creating universal apps.
+For more details on using Expo, visit the [Expo documentation](https://docs.expo.dev/).
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Contact
+
+If you have any questions or need further assistance, please feel free to contact me at [a.purevsuren0120@gmail.com](mailto:a.purevsuren0120@gmail.com).
