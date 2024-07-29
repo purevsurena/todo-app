@@ -11,7 +11,7 @@ type MaterialCommunityIconName = keyof typeof MaterialCommunityIcons.glyphMap;
 interface CardProps {
   iconName: MaterialCommunityIconName;
   iconColor: string;
-  title: string;
+  title: string | number;
   subtitle: string;
   onPress: () => void;
 }
@@ -21,19 +21,19 @@ const Card: React.FC<CardProps> = ({
   iconColor,
   title,
   subtitle,
-  onPress
+  onPress,
 }) => {
   return (
     <Click onPress={onPress}>
       <ThemedView style={styles.cardContainer}>
-      <View style={styles.header}>
-        <MaterialCommunityIcons name={iconName} size={30} color={iconColor} />
-        <ThemedText type="title">{title}</ThemedText>
-      </View>
-      <ThemedText type="subtitle" darkColor={iconColor}>
-        {subtitle}
-      </ThemedText>
-    </ThemedView>
+        <View style={styles.header}>
+          <MaterialCommunityIcons name={iconName} size={30} color={iconColor} />
+          <ThemedText type="title">{title}</ThemedText>
+        </View>
+        <ThemedText type="subtitle" darkColor={iconColor}>
+          {subtitle}
+        </ThemedText>
+      </ThemedView>
     </Click>
   );
 };
