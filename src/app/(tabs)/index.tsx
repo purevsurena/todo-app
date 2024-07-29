@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 import { ThemedView } from "@/components/shared/ThemedView";
 import Card from "@/components/shared/Card";
@@ -12,8 +12,35 @@ import { useNavigation } from "expo-router";
 import { NavigationProp } from "@react-navigation/native";
 import { RootStackParamList } from "@/types/navigation";
 import NewReminderButton from "@/components/shared/NewReminderButton";
+import { useTodoContext } from "@/context/TodoContext";
+import BottomSheetComponent from "@/components/shared/BottomSheetModal";
+import { BottomSheetModal } from "@gorhom/bottom-sheet";
+import { GategoryTypes } from "@/types/global";
 
 export default function HomeScreen() {
+  const { todoCounts, todos, loadTodos, addTodo, loadTodoCounts } =
+    useTodoContext();
+
+  useEffect(() => {
+    loadTodoCounts();
+    loadTodos("quick_notes");
+  }, []);
+
+  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+
+  const [task, setTask] = useState("");
+  const [selectedCategory, setSelectedCategory] =
+    useState<GategoryTypes>("quick_notes");
+
+  const handleOpenBottomSheet = () => {
+    bottomSheetModalRef.current?.present();
+  };
+
+  const handleCreateTodo = async () => {
+    await addTodo(task, selectedCategory);
+    setTask("");
+  };
+
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
     <ThemedView style={styles.stepContainer}>
@@ -34,7 +61,7 @@ export default function HomeScreen() {
           <Card
             iconName="weather-sunny"
             iconColor={Colors.generic.yellow}
-            title="3"
+            title={todoCounts.today}
             subtitle="Today"
             onPress={() =>
               navigation.navigate("todo-list-detail", { type: "today" })
@@ -43,7 +70,7 @@ export default function HomeScreen() {
           <Card
             iconName="calendar-arrow-right"
             iconColor="red"
-            title="0"
+            title={todoCounts.tomorrow}
             subtitle="Tomorrow"
             onPress={() =>
               navigation.navigate("todo-list-detail", { type: "tomorrow" })
@@ -57,21 +84,21 @@ export default function HomeScreen() {
 
         <Flex flexDirection="row" justifyContent="space-between">
           <Card
-            iconName="format-list-bulleted"
-            iconColor={Colors.generic.blue}
-            title="3"
-            subtitle="ToDo"
+            iconName="hand-heart"
+            iconColor={Colors.generic.orange}
+            title={todoCounts.wishlist}
+            subtitle="Wishlist"
             onPress={() =>
-              navigation.navigate("todo-list-detail", { type: "todo" })
+              navigation.navigate("todo-list-detail", { type: "wishlist" })
             }
           />
           <Card
-            iconName="calendar"
-            iconColor={Colors.generic.orange}
-            title="0"
-            subtitle="Scheduled"
+            iconName="archive-arrow-down-outline"
+            iconColor={Colors.generic.blue}
+            title={todoCounts.archive}
+            subtitle="Archived"
             onPress={() =>
-              navigation.navigate("todo-list-detail", { type: "scheduled" })
+              navigation.navigate("todo-list-detail", { type: "archive" })
             }
           />
         </Flex>
@@ -83,16 +110,31 @@ export default function HomeScreen() {
         <QuckNotesCard
           iconName="note-edit"
           iconColor={Colors.generic.turquoise}
-          title="12"
-          subtitle="Quick notes write here..."
-          tasks={[]}
+          title={todoCounts.quick_notes}
+          subtitle="Quick notes write here... 🚀"
+          tasks={todos["quick_notes"]}
           onPress={() =>
-            navigation.navigate("todo-list-detail", { type: "quick-notes" })
+            navigation.navigate("todo-list-detail", { type: "quick_notes" })
           }
         />
+        <WhiteSpace size="48" />
       </ScrollView>
 
-    <NewReminderButton onPress={() => {}} color={Colors.generic.turquoise} />
+      <NewReminderButton
+        onPress={handleOpenBottomSheet}
+        color={Colors.generic.turquoise}
+      />
+
+      <BottomSheetComponent
+        ref={bottomSheetModalRef}
+        onPress={handleCreateTodo}
+        task={task}
+        setTask={setTask}
+        color={Colors.generic.turquoise}
+        isSelectLabel
+        category={selectedCategory}
+        setSetegory={setSelectedCategory}
+      />
     </ThemedView>
   );
 }
