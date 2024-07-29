@@ -3,7 +3,7 @@ const apiUrl = process.env.EXPO_PUBLIC_API_URL;
 
 const axiosObj = () => {
   const instance = axios.create({
-    baseURL: apiUrl,
+    baseURL: `${apiUrl}/api`,
     headers: {
       Accept: "application/json",
       "cache-control": "no-cache",
