@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyComponent matches the snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+      },
+      {
+        "backgroundColor": "transparent",
+        "marginTop": 412.6666666666667,
+        "padding": 32,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#fff",
+        },
+        {
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        {
+          "color": "#9E9EA5",
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    Your todo list is empty. Add a new reminder to organize your tasks.
+  </Text>
+</View>
+`;
